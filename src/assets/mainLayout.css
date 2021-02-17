@@ -1,0 +1,98 @@
+body,
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+#root {
+    padding: 0px 1rem;
+}
+*:focus {
+    outline: none;
+}
+.login_main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+.login_form input {
+    margin-bottom: 1rem;
+    border: 2px solid #4267b2;
+    height: 45px;
+    border-radius: 14px;
+    text-align: center;
+    width: 100%;
+}
+.pageTitle {
+    font-size: 2rem;
+    text-align: center;
+    color: #4267b2;
+}
+.button_common {
+    display: block;
+    width: 70%;
+    padding: 10px 15px;
+    border-radius: 14px;
+    border: 2px solid #4267b2;
+    background: #4267b2;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+.error {
+    color: red;
+    font-size: 1rem;
+}
+
+/* Home Page */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #4267b2;
+    padding: 1rem;
+}
+.header p,
+.header a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 400;
+    margin: 0px 0px 0px 1rem;
+}
+.poll_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.poll_items p {
+    margin: 0px;
+    font-size: 1.3rem;
+    border: 1px solid #4267b2;
+    padding: 1rem;
+    border-radius: 14px;
+    color: #4267b2;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.create_poll form {
+    display: flex;
+    flex-direction: column;
+}
+.active_tab {
+    background: #4267b2;
+    color: #fff;
+    border-color: #4267b2 !important;
+    color: #fff !important;
+}
