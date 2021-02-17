@@ -17,6 +17,11 @@ const initialState = {
             username: "Razeen",
             password: "Razeen123",
         },
+        {
+            id: 3,
+            username: "Hello",
+            password: "Hello",
+        },
     ],
     currentLoggedInUser: {},
 };

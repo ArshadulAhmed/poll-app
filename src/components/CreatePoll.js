@@ -40,7 +40,11 @@ function CreatePoll(props) {
     }
 
     if (counter >= 2) {
-        return <p>You have exceed the max limit for creating Poll</p>;
+        return (
+            <p className="not_allowed">
+                You have exceed the max limit for creating Poll
+            </p>
+        );
     }
 
     console.log("count", counter);

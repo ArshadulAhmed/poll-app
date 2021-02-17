@@ -13,10 +13,14 @@ export default function (state = initialState, action) {
             };
 
         case ADD_POINT_SUCCESS:
+            let count = 0;
             if (state.points_given.length <= 0) {
                 state.points_given.push(action.payload);
             } else {
                 const isPresent = state.points_given.some((item) => {
+                    if (item.user_id === action.payload.user_id) {
+                        count++;
+                    }
                     if (
                         item.user_id === action.payload.user_id &&
                         item.poll_id === action.payload.poll_id
@@ -26,7 +30,8 @@ export default function (state = initialState, action) {
                         return false;
                     }
                 });
-                if (!isPresent) {
+                console.log({ count });
+                if (!isPresent && count < 3) {
                     state.points_given.push(action.payload);
                 }
             }
