@@ -8,7 +8,7 @@ import rootReducer from "../reducers/index";
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: [],
+    whitelist: ["users", "allDishes"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

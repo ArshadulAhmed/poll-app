@@ -4,6 +4,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import MainLayout from "./mainLayout/MainLayout";
 import BaseRoutes from "./routing/BaseRoutes";
 import { Provider } from "react-redux";
+
 import { store, persistor } from "./redux/store/store";
 import "./assets/mainLayout.css";
 
