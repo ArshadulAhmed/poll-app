@@ -12,7 +12,7 @@ function AllPolls(props) {
             <p>{item.dish_name}</p>
             <p>{item.dish_description}</p>
             <p>{item.dish_upload_by_user}</p>
-            <Ratings />
+            <Ratings id={item.id} />
         </div>
     ));
 
