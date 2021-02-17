@@ -2,6 +2,7 @@ import {
     LOAD_USER_START,
     LOAD_USER_SUCCESS,
     LOAD_USER_FAIL,
+    LOGOUT_USER,
 } from "../utils/types";
 
 const initialState = {
@@ -55,7 +56,12 @@ export default function (state = initialState, action) {
                 ...action.payload,
                 isLoading: false,
             };
-
+        case LOGOUT_USER:
+            return {
+                ...state,
+                currentLoggedInUser: {},
+                isLoading: false,
+            };
         default:
             return state;
     }

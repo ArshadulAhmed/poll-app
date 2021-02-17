@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import Ratings from "../components/Ratings";
 
 function AllPolls(props) {
+    if (props.all_polls.length === 0) {
+        return <p>No Polls, Create one</p>;
+    }
+
     const all_items = props.all_polls.map((item, index) => (
         <div key={index} className="individual_items">
             <p>{item.dish_name}</p>

@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import { logOut } from "../redux/actions/users";
 import { Link } from "react-router-dom";
 
 function Header(props) {
     const handleLogout = () => {
-        console.log("handleLogout");
+        props.logOut();
     };
     if (Object.keys(props.currrentUser).length <= 0) {
         return null;
@@ -24,5 +25,5 @@ function mapStateToProps(state) {
     };
 }
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = { logOut };
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

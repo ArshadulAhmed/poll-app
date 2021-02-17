@@ -4,3 +4,4 @@ export const LOAD_USER_FAIL = "LOAD_USER_FAIL";
 
 export const SVAE_DISH = "SVAE_DISH";
 export const SVAE_DISH_START = "SVAE_DISH_START";
+export const LOGOUT_USER = "LOGOUT_USER";

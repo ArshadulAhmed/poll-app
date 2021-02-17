@@ -4,6 +4,7 @@ import { submitDish } from "../redux/actions/submitDish";
 
 function CreatePoll(props) {
     const [error, setError] = useState(null);
+    let counter = 0;
 
     const handleDishSubmit = (e) => {
         e.preventDefault();
@@ -27,6 +28,23 @@ function CreatePoll(props) {
             }
         }
     };
+
+    if (props.total_dish_uploaded_by_current_user.length > 0) {
+        props.total_dish_uploaded_by_current_user.map((item) => {
+            console.log({ item });
+            if (item.dish_upload_by === props.dish_upload_by.id) {
+                counter = counter + 1;
+            }
+            return counter;
+        });
+    }
+
+    if (counter >= 2) {
+        return <p>You have exceed the max limit for creating Poll</p>;
+    }
+
+    console.log("count", counter);
+
     return (
         <div className="create_poll">
             <form onSubmit={handleDishSubmit}>
@@ -52,6 +70,7 @@ function mapStateToProps(state) {
     return {
         dish_upload_by:
             state.users.currentLoggedInUser && state.users.currentLoggedInUser,
+        total_dish_uploaded_by_current_user: state.allDishes.all_dishes,
     };
 }
 

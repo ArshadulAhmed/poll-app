@@ -13,10 +13,20 @@ export default function (state = initialState, action) {
             };
 
         case SVAE_DISH:
-            state.all_dishes.push(action.payload);
+            let count = 0;
+            if (state.all_dishes.length > 0) {
+                state.all_dishes.map((item) => {
+                    if (item.dish_upload_by === action.payload.dish_upload_by) {
+                        count = count + 1;
+                    }
+                    return count;
+                });
+            }
+            if (count < 2) {
+                state.all_dishes.push(action.payload);
+            }
             return {
                 ...state,
-                all_dishes: state.all_dishes,
                 isLoading: false,
             };
 
