@@ -14,6 +14,7 @@ export default function (state = initialState, action) {
 
         case SVAE_DISH:
             let count = 0;
+
             if (state.all_dishes.length > 0) {
                 state.all_dishes.map((item) => {
                     if (item.dish_upload_by === action.payload.dish_upload_by) {
@@ -22,9 +23,13 @@ export default function (state = initialState, action) {
                     return count;
                 });
             }
+            let totalPoll =
+                state.all_dishes.length === 0 ? 1 : state.all_dishes.length + 1;
             if (count < 2) {
+                action.payload["id"] = totalPoll;
                 state.all_dishes.push(action.payload);
             }
+
             return {
                 ...state,
                 isLoading: false,
