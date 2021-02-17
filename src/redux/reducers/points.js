@@ -18,12 +18,21 @@ export default function (state = initialState, action) {
                 state.points_given.push(action.payload);
             } else {
                 const isPresent = state.points_given.some((item) => {
+                    console.log({ item });
+                    console.log("dd", action.payload);
                     if (item.user_id === action.payload.user_id) {
                         count++;
                     }
                     if (
                         item.user_id === action.payload.user_id &&
                         item.poll_id === action.payload.poll_id
+                    ) {
+                        return true;
+                    }
+
+                    if (
+                        item.user_id === action.payload.user_id &&
+                        item.point === action.payload.point
                     ) {
                         return true;
                     } else {

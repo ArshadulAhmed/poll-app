@@ -136,3 +136,15 @@ p.point {
     color: #ef3232;
     letter-spacing: 1px;
 }
+
+.active,
+.non_active {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.active {
+    background: #fff;
+    color: red;
+}

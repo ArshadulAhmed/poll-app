@@ -6,15 +6,62 @@ function Ratings(props) {
     const handlePoint = (value) => {
         props.givePoint(props.currrentUser, props.id, value);
     };
+
     return (
         <div className="rating_element">
-            <p className="point" onClick={() => handlePoint(10)}>
+            <p
+                onClick={() => handlePoint(10)}
+                className={
+                    props.total_item_liked &&
+                    props.total_item_liked.some((item) => {
+                        if (
+                            item.user_id === props.currrentUser &&
+                            item.poll_id === props.id &&
+                            item.point === 10
+                        ) {
+                            return true;
+                        }
+                    })
+                        ? "active"
+                        : "non_active"
+                }
+            >
                 10 Points
             </p>
-            <p className="point" onClick={() => handlePoint(20)}>
+            <p
+                onClick={() => handlePoint(20)}
+                className={
+                    props.total_item_liked.some((item) => {
+                        if (
+                            item.user_id === props.currrentUser &&
+                            item.poll_id === props.id &&
+                            item.point === 20
+                        ) {
+                            return true;
+                        }
+                    })
+                        ? "active"
+                        : "non_active"
+                }
+            >
                 20 Points
             </p>
-            <p className="point" onClick={() => handlePoint(30)}>
+            <p
+                onClick={() => handlePoint(30)}
+                className={
+                    props.total_item_liked.some((item) => {
+                        if (
+                            item.user_id === props.currrentUser &&
+                            item.poll_id === props.id &&
+                            item.point === 30
+                        ) {
+                            return true;
+                        }
+                    })
+                        ? "active"
+                        : "non_active"
+                }
+            >
                 30 Points
             </p>
         </div>
